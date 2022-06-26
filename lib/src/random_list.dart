@@ -38,12 +38,21 @@ class _RandomListState extends State<RandomList> {
   }
 
   Widget _buildRow(WordPair pair) {
+    final bool alreadySaved = _saved.contains(pair);
+
     return ListTile(
       title: Text(pair.asPascalCase, textScaleFactor: 1.5),
       trailing: Icon(
         Icons.favorite_border,
         color: Colors.pink,
       ),
+      onTap: (){
+        if(alreadySaved)
+          _saved.remove(pair); // true
+        else
+          _saved.add(pair); // false
+        print(_saved.toString());
+      },
     );
   }
 }

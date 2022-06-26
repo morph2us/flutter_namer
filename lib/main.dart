@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
 import 'src/random_list.dart';
 
 void main() => runApp(MyApp());
@@ -7,12 +6,10 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    final randomWord = WordPair.random();
+    // TODO: implement build
     return MaterialApp(
       home: RandomList(),
     );
-    // TODO: implement build
-    throw UnimplementedError();
   }
   
 }
