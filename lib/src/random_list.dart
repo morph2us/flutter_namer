@@ -43,15 +43,17 @@ class _RandomListState extends State<RandomList> {
     return ListTile(
       title: Text(pair.asPascalCase, textScaleFactor: 1.5),
       trailing: Icon(
-        Icons.favorite_border,
+        alreadySaved ? Icons.favorite : Icons.favorite_border,
         color: Colors.pink,
       ),
       onTap: (){
-        if(alreadySaved)
-          _saved.remove(pair); // true
-        else
-          _saved.add(pair); // false
-        print(_saved.toString());
+        setState((){
+          if(alreadySaved)
+            _saved.remove(pair); // true
+          else
+            _saved.add(pair); // false
+          print(_saved.toString());
+        });
       },
     );
   }
