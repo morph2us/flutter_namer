@@ -6,7 +6,6 @@ class Bloc{
   final _savedController = StreamController<Set<WordPair>>.broadcast();
 
   get savedStream => _savedController.stream;
-
   get addCurrentSaved => _savedController.sink.add(saved);
 
   addToOrRemoveFromSavedList(WordPair item){

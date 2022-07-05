@@ -24,7 +24,7 @@ class _RandomListState extends State<RandomList> {
                     MaterialPageRoute(builder: (context)=>SavedList())
                 ).then((value) => setState(() {}));
               },
-              icon: Icon(Icons.list),
+              icon: const Icon(Icons.list),
           )
         ],
       ),
@@ -41,7 +41,7 @@ class _RandomListState extends State<RandomList> {
           // 1, 3, 5, 7, 9... = dividers
 
           if (index.isOdd) {
-            return Divider();
+            return const Divider();
           }
           var realIndex = index ~/ 2;
           if (realIndex >= _suggestions.length) {
@@ -53,7 +53,7 @@ class _RandomListState extends State<RandomList> {
     );
   }
 
-  Widget _buildRow(Set<WordPair> saved, WordPair pair) {
+  Widget _buildRow(Set<WordPair>? saved, WordPair pair) {
     final bool alreadySaved = saved==null? false : saved.contains(pair);
 
     return ListTile(

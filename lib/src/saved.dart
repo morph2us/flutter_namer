@@ -25,7 +25,10 @@ class _SavedListState extends State<SavedList> {
         var saved = Set<WordPair>();
 
         if(snapshot.hasData){
-          saved.addAll(snapshot.data);
+          // saved.addAll(snapshot.data);
+          // print(snapshot.data);
+          // saved.addAll(snapshot.data);
+          saved.addAll(snapshot.requireData);
         }else{
           bloc.addCurrentSaved;
         }
